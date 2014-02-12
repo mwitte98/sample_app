@@ -1,5 +1,8 @@
 require 'rubygems'
 require 'spork'
+require 'database_cleaner'
+
+DatabaseCleaner.strategy = :truncation
 
 Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
@@ -53,5 +56,5 @@ end
 
 Spork.each_run do
   # This code will be run each time you run your specs.
-
+  DatabaseCleaner.clean
 end
