@@ -27,7 +27,5 @@ module SampleApp
     I18n.enforce_available_locales = true
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
-    #Raise errors that are in the rails asset pipeline
-    config.assets.raise_production_errors = true
   end
 end
